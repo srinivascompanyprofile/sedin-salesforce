@@ -1,4 +1,4 @@
-name: Sedstart SAP
+name: Sedstart SAP Workflow
 
 on:
   workflow_dispatch:
