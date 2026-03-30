@@ -1,0 +1,18 @@
+name: Sedstart SAP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sedstart-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger SedStart test run
+        uses: sedstart/runcloud@v1
+        with:
+          api_key: ${{ secrets.SEDSTART_API_KEY_SAP }}
+          project_id: 727
+          suite_id: 694
+          profile_id: 1317
+          browser: chrome
+          headless: true
