@@ -1,0 +1,18 @@
+name: Sedstart Ecomm Smoke
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sedstart-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger SedStart test run
+        uses: sedstart/runcloud@v1
+        with:
+          api_key: ${{ secrets.SEDSTART_API_KEY_ECOMM_WEB }}
+          project_id: 988
+          test_id: 8604
+          profile_id: 1841
+          browser: chromium
+          headless: true
