@@ -1,0 +1,18 @@
+name: Sedstart OODO Regression
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sedstart-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger SedStart test run
+        uses: sedstart/runcloud@v1
+        with:
+          api_key: ${{ secrets.SEDSTART_API_KEY_QA_OODO }}
+          project_id: 1022
+          suite_id: 888
+          profile_id: 1931
+          browser: chromium
+          headless: true
